@@ -1,0 +1,47 @@
+חלק 1
+
+1. 2
+2. 2
+3. 1
+4. 1
+5. 1
+6. 1
+7. 1
+8. 3
+9. 4
+10. 2
+
+חלק 2
+
+1א.
+
+CREATE TABLE computers1 (
+    id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+    serial_number TEXT UNIQUE NOT NULL CHECK (LENGTH(serial_number) = 7),
+    brand TEXT DEFAULT "hp",
+    model TEXT NOT NULL,
+    screen_size INTEGER DEFAULT 23,
+    processor TEXT DEFAULT "intel_i5",
+    ram_size INTEGER DEFAULT 8,
+    storage_capacity TEXT DEFAULT "250 GB HDD",
+    gpu TEXT,
+    price INTEGER DEFAULT 1000,
+    stock_quantity INTEGER NOT NULL CHECK (stock_quantity BETWEEN 0 AND 100),
+    release_year INTEGER DEFAULT 2020,
+    operating_system TEXT CHECK (operating_system IN ("Linux", "Windows", "macOS")),
+    battery_life INTEGER DEFAULT 20
+)
+
+1ב.
+
+INSERT INTO computers1 (serial_number, brand, model, screen_size, processor, ram_size, storage_capacity, gpu, price, stock_quantity, release_year, operating_system, battery_life) VALUES
+(5533555, "Dell" , "H02", 24 , "intel i5", 12 , "225 hdd" , NULL , 220, 50, 2024, "macOS", 15),
+(5633355, "LENOVO", "H2S", 25 , "intel i6", 23 , "224 hdd" , "geforce 1000", 250 , 40 , 2013 , "Windows" , 24),
+(8644455, "APPLE" , "HPS" , 21 , "intel 12 pro max ultra extreme", 24 , "255 hdd" , "geforce 2040", 260, 50 , 2000, "Linux", 24)
+
+
+
+
+
+
+
